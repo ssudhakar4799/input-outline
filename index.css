@@ -1,0 +1,50 @@
+.container {
+    width: 35%;
+    padding-top: 250px;
+    margin: auto;
+}
+.input-box {
+    border-radius: 0.375rem;
+    border: 1px solid #cad0db;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    transition: border 0.3s ease;
+    position: relative;
+}
+.userInput {
+    border-radius: 0.375rem;
+    flex: 1;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    padding: 0.75rem;
+    font-weight: 500;
+    width: 100%;
+}
+.input-box::before, .input-box::after {
+    border: 0 solid transparent;
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    transition: border-color 0s, width 0.25s, height 0.25s;
+}
+.input-box.outline-border::before {
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+}
+.input-box.outline-border::after {
+    border-top-width: 1px;
+    border-right-width: 1px;
+}
+.outline-border::before, .outline-border::after {
+    border-color: #e22424;
+    border-radius: 0.375rem;
+    width: calc(100% - 0px);
+    height: calc(100% - 0px);
+}
